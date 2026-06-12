@@ -1,0 +1,24 @@
+{
+  "name": "rails-native-kit",
+  "metadata": {
+    "description": "Battle-tested plugins for Rails developers building mobile apps with Hotwire Native and deploying with Kamal"
+  },
+  "owner": {
+    "name": "Cuong Nguyen",
+    "email": "cuongnguyenfu.ss@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "hotwire-native",
+      "source": "./hotwire-native",
+      "description": "Battle-tested skill for building iOS/Android apps with Hotwire Native: path configuration, native screens, bridge components, push notifications, and deployment. Covers real-world gotchas the official docs don't tell you.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "kamal",
+      "source": "./kamal",
+      "description": "Skill for deploying Rails apps with Kamal: zero-downtime deployments, accessory setup, environment configuration, and rollbacks.",
+      "version": "0.1.0"
+    }
+  ]
+}

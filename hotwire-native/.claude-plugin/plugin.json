@@ -1,0 +1,10 @@
+{
+  "name": "hotwire-native",
+  "description": "Battle-tested skill for building iOS/Android apps with Hotwire Native: path configuration, native screens, bridge components, push notifications, and deployment. Covers real-world gotchas the official docs don't tell you.",
+  "author": {
+    "name": "Cuong Nguyen",
+    "email": "cuongnguyenfu.ss@gmail.com"
+  },
+  "homepage": "https://github.com/cuongnc0211/rails-native-kit",
+  "version": "0.1.0"
+}

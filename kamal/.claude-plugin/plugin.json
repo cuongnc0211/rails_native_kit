@@ -1,0 +1,10 @@
+{
+  "name": "kamal",
+  "description": "Skill for deploying Rails apps with Kamal: zero-downtime deployments, accessory setup, environment configuration, and rollbacks.",
+  "author": {
+    "name": "Cuong Nguyen",
+    "email": "cuongnguyenfu.ss@gmail.com"
+  },
+  "homepage": "https://github.com/cuongnc0211/rails-native-kit",
+  "version": "0.1.0"
+}
