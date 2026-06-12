@@ -1,0 +1,9 @@
+{
+  "name": "rails_native_kit",
+  "description": "Battle-tested skills for Rails developers building mobile apps with Hotwire Native and deploying with Kamal. Covers iOS/Android setup, path configuration, bridge components, native screens, push notifications, and zero-downtime deployment.",
+  "author": {
+    "name": "Cuong Nguyen",
+    "email": "cuongnguyenfu.ss@gmail.com"
+  },
+  "homepage": "https://github.com/cuongnc0211/rails_native_kit"
+}
