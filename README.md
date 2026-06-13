@@ -13,7 +13,7 @@ quirks, and Rails/Propshaft traps the official docs don't cover. Not a docs mirr
 | Plugin | What it covers | Always-on cost |
 |--------|---------------|----------------|
 | [`hotwire-native`](#hotwire-native) | iOS/Android setup, path config, native screens, bridge components, push notifications, deployment | ~113 tok |
-| [`kamal`](#kamal) | Zero-downtime deployments, accessory setup, environment config, rollbacks | ~72 tok |
+| [`kamal`](#kamal) | deploy.yml config, Kamal Proxy/SSL, secrets, accessories, zero-downtime deploys, rollbacks, CI/CD | ~90 tok |
 
 ---
 
@@ -88,7 +88,45 @@ real build. Unmarked content is docs-sourced.
 
 ## kamal
 
-Topics covered: zero-downtime deployments, accessory setup, environment configuration, rollbacks.
+**Verified against:** the official Kamal docs (kamal-deploy.org) + `basecamp/kamal` source · Kamal 2.11.x · Kamal Proxy
+
+Topics covered:
+
+- Concepts — push model, deploy loop, Kamal Proxy, locks, hooks, terminology
+- Getting started — install, `kamal init`, minimal config, first `setup`/`deploy`
+- Configuration — `deploy.yml` servers/roles, registry, builder, asset bridging, SSH
+- Secrets & env — `env.clear` vs `env.secret`, `.kamal/secrets`, secret managers, tags
+- Kamal Proxy — TLS/Let's Encrypt, host routing, health checks, timeouts, buffering
+- Accessories — Postgres/Redis, scheduled jobs (cron role), Docker networking
+- Volumes & data — named volumes, bind mounts, `directories:`/`files:`
+- Destinations — staging vs production, `deploy.<dest>.yml`, per-destination secrets
+- Server provisioning — non-root user, UFW, fail2ban, swap
+- Maintenance — rollbacks, locks, `app exec`, logs, aliases, prune
+- CI/CD — GitHub Actions, kamal-less build, `--skip-push`, build cache
+- Backups — database dumps, volume backups, restore
+- Troubleshooting — symptom → cause → fix tables, debugging commands
+
+```
+kamal/
+├── SKILL.md             # entry point — decision framework, routing table, top gotchas
+└── references/          # 13 task-focused files loaded on demand
+    ├── concepts.md
+    ├── getting-started.md
+    ├── configuration.md
+    ├── secrets-and-env.md
+    ├── kamal-proxy.md
+    ├── accessories.md
+    ├── volumes-and-data.md
+    ├── destinations.md
+    ├── server-provisioning.md
+    ├── maintenance.md
+    ├── ci-cd.md
+    ├── backups.md
+    └── troubleshooting.md
+```
+
+All Kamal content is docs-sourced (verified against the official docs); a real-deploy
+verification pass is planned, after which confirmed content will carry `✅ Verified` markers.
 
 ---
 
@@ -98,6 +136,8 @@ Topics covered: zero-downtime deployments, accessory setup, environment configur
 - [hotwire-native-ios on GitHub](https://github.com/hotwired/hotwire-native-ios)
 - [hotwire-native-android on GitHub](https://github.com/hotwired/hotwire-native-android)
 - *Hotwire Native for Rails Developers* by Joe Masilotti (PragProg) — recommended book
+- [Kamal official docs](https://kamal-deploy.org)
+- [kamal on GitHub](https://github.com/basecamp/kamal) · [kamal-proxy on GitHub](https://github.com/basecamp/kamal-proxy)
 
 ---
 
