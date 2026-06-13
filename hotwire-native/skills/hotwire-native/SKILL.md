@@ -101,3 +101,13 @@ override nonisolated class var name: String { "button" }
 **7. `allow_browser versions: :modern` returns 406 for path config fetch** — fix: inherit path config controller from `ActionController::Base`.
 
 **8. Append to `rightBarButtonItems` (plural)** — assigning to the singular overwrites existing buttons.
+
+**9. iOS auto-zooms on `font-size < 16px` inputs — zoom persists after Turbo redirect** — iOS WKWebView zooms into any focused input smaller than 16px. Unlike Safari (which resets on navigation), the zoom state survives Turbo's soft navigation, so the page after login/form-submit appears zoomed in until a hard refresh. Fix: add a global CSS rule so inputs are never smaller than 16px:
+```css
+@supports (-webkit-touch-callout: none) {
+  input, textarea, select {
+    font-size: max(16px, 1em);
+  }
+}
+```
+`max(16px, 1em)` preserves larger sizes; `@supports (-webkit-touch-callout: none)` limits the rule to iOS/Safari only.
