@@ -111,3 +111,11 @@ override nonisolated class var name: String { "button" }
 }
 ```
 `max(16px, 1em)` preserves larger sizes; `@supports (-webkit-touch-callout: none)` limits the rule to iOS/Safari only.
+
+**10. Emoji render as "?" boxes in WKWebView (iOS 26+, unresolved)** — Custom `--font-sans` overrides Tailwind's default stack which included `"Apple Color Emoji"`. Restore it:
+```css
+@theme {
+  --font-sans: "Your Font", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+}
+```
+**Known issue:** adding emoji fonts back is unconfirmed to fully fix iOS 26 WKWebView — emoji may still render as "?". For static UI, use inline SVG instead of emoji. For dynamic/AI-generated content that may contain emoji, a reliable solution (e.g. Twemoji img replacement) is still needed.
